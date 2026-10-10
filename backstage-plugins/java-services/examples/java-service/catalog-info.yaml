@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: inventory-api
+  title: Inventory API
+  description: Java service for inventory availability and stock reservations.
+  tags:
+    - java
+    - backend
+  annotations:
+    java-services.io/language: java
+    java-services.io/java-version: "21"
+    java-services.io/framework: Spring Boot
+    java-services.io/build-tool: Maven
+    java-services.io/artifact: com.example.inventory:inventory-api
+    java-services.io/repository-url: https://github.com/example/inventory-api
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/inventory-team
+  system: warehouse

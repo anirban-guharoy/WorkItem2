@@ -1,0 +1,253 @@
+.java-services {
+  --java-ink: #202c33;
+  --java-muted: #64747b;
+  --java-line: #dce4e3;
+  --java-green: #116b5b;
+  --java-paper: #f5f8f6;
+  color: var(--java-ink);
+  min-height: 100%;
+  padding: 32px clamp(16px, 4vw, 48px) 48px;
+  background: var(--java-paper);
+  font-family: "Aptos", "Segoe UI", sans-serif;
+}
+
+.java-services__header {
+  align-items: flex-end;
+  border-bottom: 1px solid var(--java-line);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 24px;
+}
+
+.java-services__eyebrow {
+  color: var(--java-green);
+  font-size: 11px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.java-services h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.java-services__summary {
+  color: var(--java-muted);
+  font-size: 14px;
+  margin: 8px 0 0;
+}
+
+.java-services button {
+  background: #fff;
+  border: 1px solid #aebfba;
+  border-radius: 4px;
+  color: var(--java-ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  min-height: 38px;
+  padding: 0 14px;
+}
+
+.java-services button:hover {
+  background: #eaf2ef;
+}
+
+.java-services__toolbar {
+  align-items: flex-end;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 20px 0 12px;
+}
+
+.java-services__search {
+  color: var(--java-muted);
+  display: grid;
+  font-size: 12px;
+  font-weight: 600;
+  gap: 6px;
+  max-width: 520px;
+  width: 100%;
+}
+
+.java-services__search input {
+  background: #fff;
+  border: 1px solid #bdcbc7;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--java-ink);
+  font: inherit;
+  font-size: 14px;
+  min-height: 40px;
+  padding: 0 12px;
+  width: 100%;
+}
+
+.java-services__search input:focus {
+  border-color: var(--java-green);
+  outline: 2px solid #9bd3c1;
+  outline-offset: 1px;
+}
+
+.java-services__result-count {
+  color: var(--java-muted);
+  font-size: 13px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
+
+.java-services__table-wrap {
+  border: 1px solid var(--java-line);
+  border-radius: 5px;
+  overflow: auto;
+  background: #fff;
+}
+
+.java-services__table {
+  border-collapse: collapse;
+  min-width: 840px;
+  text-align: left;
+  width: 100%;
+}
+
+.java-services__table th {
+  background: #eaf1ed;
+  color: #435852;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 12px 14px;
+  text-transform: uppercase;
+}
+
+.java-services__table td {
+  border-top: 1px solid #e9eeec;
+  font-size: 13px;
+  max-width: 270px;
+  overflow-wrap: anywhere;
+  padding: 14px;
+  vertical-align: top;
+}
+
+.java-services__table a {
+  color: var(--java-green);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.java-services__service-name {
+  display: grid;
+  gap: 4px;
+}
+
+.java-services__service-name > span {
+  color: var(--java-muted);
+  font-size: 12px;
+}
+
+.java-services__description {
+  color: var(--java-muted);
+  line-height: 1.45;
+  margin-top: 7px;
+}
+
+.java-services__artifact {
+  color: #526761;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.java-services__lifecycle {
+  background: #edf4ee;
+  border-radius: 3px;
+  color: #36584b;
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 7px;
+}
+
+.java-services__state {
+  background: #fff;
+  border: 1px solid var(--java-line);
+  border-radius: 5px;
+  color: var(--java-muted);
+  margin-top: 10px;
+  padding: 24px;
+}
+
+.java-services__state--error {
+  align-items: center;
+  color: #8f302b;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+@media (max-width: 760px) {
+  .java-services {
+    padding-top: 24px;
+  }
+
+  .java-services__header {
+    align-items: flex-start;
+  }
+
+  .java-services__toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .java-services__table-wrap {
+    background: transparent;
+    border: 0;
+    overflow: visible;
+  }
+
+  .java-services__table {
+    display: block;
+    min-width: 0;
+  }
+
+  .java-services__table thead {
+    display: none;
+  }
+
+  .java-services__table tbody {
+    display: grid;
+    gap: 10px;
+  }
+
+  .java-services__table tr {
+    background: #fff;
+    border: 1px solid var(--java-line);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+  }
+
+  .java-services__table td {
+    border-top: 1px solid #e9eeec;
+    max-width: none;
+    padding: 11px 12px;
+  }
+
+  .java-services__table td:first-child {
+    border-top: 0;
+    grid-column: 1 / -1;
+  }
+
+  .java-services__table td::before {
+    color: var(--java-muted);
+    content: attr(data-label);
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+}
