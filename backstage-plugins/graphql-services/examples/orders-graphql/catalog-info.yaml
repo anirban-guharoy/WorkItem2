@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: orders-graphql
+  title: Orders GraphQL
+  description: Federated GraphQL gateway for orders and fulfilment.
+  tags:
+    - graphql
+    - backend
+  annotations:
+    graphql-services.io/type: graphql
+    graphql-services.io/server: Apollo Server
+    graphql-services.io/endpoint: https://orders.example.com/graphql
+    graphql-services.io/schema-url: https://github.com/example/orders-graphql/blob/main/schema.graphql
+    graphql-services.io/playground-url: https://orders.example.com/graphql/playground
+    graphql-services.io/federation: Apollo Federation 2
+    graphql-services.io/subgraphs: orders, customers, inventory
+    graphql-services.io/repository-url: https://github.com/example/orders-graphql
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/orders-team
+  system: retail

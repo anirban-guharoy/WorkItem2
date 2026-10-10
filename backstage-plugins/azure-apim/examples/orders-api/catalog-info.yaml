@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: orders-api
+  title: Orders API
+  description: Order placement and tracking API published through Azure API Management.
+  tags:
+    - apim
+    - rest
+  annotations:
+    azure-apim.io/service: contoso-apim
+    azure-apim.io/api-id: orders-api
+    azure-apim.io/resource-group: contoso-rg
+    azure-apim.io/subscription-id: 00000000-0000-0000-0000-000000000000
+    azure-apim.io/gateway-url: https://contoso-apim.azure-api.net/orders
+    azure-apim.io/base-path: /orders
+    azure-apim.io/product: Retail
+    azure-apim.io/api-version: v1
+    azure-apim.io/subscription-required: "true"
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/orders-team
+  system: retail
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: Orders API
+      version: v1
+    paths: {}

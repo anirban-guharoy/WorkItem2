@@ -1,0 +1,28 @@
+{
+  "name": "@internal/plugin-mongodb-atlas-backend",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Backstage backend plugin that reads MongoDB Atlas clusters hosted on Azure via the Atlas Admin API",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "backstage": {
+    "role": "backend-plugin",
+    "pluginId": "mongodb-atlas"
+  },
+  "configSchema": "config.d.ts",
+  "files": ["dist", "config.d.ts"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@backstage/backend-plugin-api": "^1.10.1",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.3"
+  }
+}

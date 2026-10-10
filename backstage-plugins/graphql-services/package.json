@@ -1,0 +1,31 @@
+{
+  "name": "@internal/plugin-graphql-services",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Backstage plugin for catalog-backed GraphQL service discovery",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "backstage": {
+    "role": "frontend-plugin"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && cp src/components/GraphqlServicesPage.css dist/components/GraphqlServicesPage.css",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@backstage/catalog-model": "^1.10.1",
+    "@backstage/core-plugin-api": "^1.12.10",
+    "@backstage/plugin-catalog-react": "^3.2.3"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.30.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.7",
+    "typescript": "^5.9.3"
+  }
+}

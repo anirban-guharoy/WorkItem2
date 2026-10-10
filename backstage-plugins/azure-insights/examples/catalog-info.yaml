@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: orders-api
+  description: Service instrumented with Azure Application Insights.
+  annotations:
+    azure-insights.io/resource-id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/my-rg/providers/microsoft.insights/components/orders-api-ai
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/orders-team

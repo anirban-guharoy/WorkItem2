@@ -1,0 +1,258 @@
+.azure-apim {
+  --apim-ink: #1f2a37;
+  --apim-muted: #5f6f81;
+  --apim-line: #d9e2ee;
+  --apim-blue: #0f62b6;
+  --apim-paper: #f4f7fb;
+  color: var(--apim-ink);
+  min-height: 100%;
+  padding: 32px clamp(16px, 4vw, 48px) 48px;
+  background: var(--apim-paper);
+  font-family: "Aptos", "Segoe UI", sans-serif;
+}
+
+.azure-apim__header {
+  align-items: flex-end;
+  border-bottom: 1px solid var(--apim-line);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 24px;
+}
+
+.azure-apim__eyebrow {
+  color: var(--apim-blue);
+  font-size: 11px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.azure-apim h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.azure-apim__summary {
+  color: var(--apim-muted);
+  font-size: 14px;
+  margin: 8px 0 0;
+}
+
+.azure-apim button {
+  background: #fff;
+  border: 1px solid #b2c3d8;
+  border-radius: 4px;
+  color: var(--apim-ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  min-height: 38px;
+  padding: 0 14px;
+}
+
+.azure-apim button:hover {
+  background: #e8f0fa;
+}
+
+.azure-apim__toolbar {
+  align-items: flex-end;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 20px 0 12px;
+}
+
+.azure-apim__search {
+  color: var(--apim-muted);
+  display: grid;
+  font-size: 12px;
+  font-weight: 600;
+  gap: 6px;
+  max-width: 520px;
+  width: 100%;
+}
+
+.azure-apim__search input {
+  background: #fff;
+  border: 1px solid #bccbdd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--apim-ink);
+  font: inherit;
+  font-size: 14px;
+  min-height: 40px;
+  padding: 0 12px;
+  width: 100%;
+}
+
+.azure-apim__search input:focus {
+  border-color: var(--apim-blue);
+  outline: 2px solid #a8cbee;
+  outline-offset: 1px;
+}
+
+.azure-apim__result-count {
+  color: var(--apim-muted);
+  font-size: 13px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
+
+.azure-apim__table-wrap {
+  border: 1px solid var(--apim-line);
+  border-radius: 5px;
+  overflow: auto;
+  background: #fff;
+}
+
+.azure-apim__table {
+  border-collapse: collapse;
+  min-width: 960px;
+  text-align: left;
+  width: 100%;
+}
+
+.azure-apim__table th {
+  background: #e9f0f8;
+  color: #46586c;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 12px 14px;
+  text-transform: uppercase;
+}
+
+.azure-apim__table td {
+  border-top: 1px solid #e8eef5;
+  font-size: 13px;
+  max-width: 270px;
+  overflow-wrap: anywhere;
+  padding: 14px;
+  vertical-align: top;
+}
+
+.azure-apim__table a {
+  color: var(--apim-blue);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.azure-apim__name {
+  display: grid;
+  gap: 4px;
+}
+
+.azure-apim__name > span {
+  color: var(--apim-muted);
+  font-size: 12px;
+}
+
+.azure-apim__description {
+  color: var(--apim-muted);
+  line-height: 1.45;
+  margin-top: 7px;
+}
+
+.azure-apim__mono {
+  color: #4b5e72;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.azure-apim__links {
+  display: grid;
+  gap: 6px;
+}
+
+.azure-apim__lifecycle {
+  background: #e8eff8;
+  border-radius: 3px;
+  color: #2f4b6b;
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 7px;
+}
+
+.azure-apim__state {
+  background: #fff;
+  border: 1px solid var(--apim-line);
+  border-radius: 5px;
+  color: var(--apim-muted);
+  margin-top: 10px;
+  padding: 24px;
+}
+
+.azure-apim__state--error {
+  align-items: center;
+  color: #8f302b;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+@media (max-width: 760px) {
+  .azure-apim {
+    padding-top: 24px;
+  }
+
+  .azure-apim__header {
+    align-items: flex-start;
+  }
+
+  .azure-apim__toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .azure-apim__table-wrap {
+    background: transparent;
+    border: 0;
+    overflow: visible;
+  }
+
+  .azure-apim__table {
+    display: block;
+    min-width: 0;
+  }
+
+  .azure-apim__table thead {
+    display: none;
+  }
+
+  .azure-apim__table tbody {
+    display: grid;
+    gap: 10px;
+  }
+
+  .azure-apim__table tr {
+    background: #fff;
+    border: 1px solid var(--apim-line);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+  }
+
+  .azure-apim__table td {
+    border-top: 1px solid #e8eef5;
+    max-width: none;
+    padding: 11px 12px;
+  }
+
+  .azure-apim__table td:first-child {
+    border-top: 0;
+    grid-column: 1 / -1;
+  }
+
+  .azure-apim__table td::before {
+    color: var(--apim-muted);
+    content: attr(data-label);
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+}

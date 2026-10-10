@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: orders-api
+  description: Service backed by MongoDB Atlas on Azure.
+  annotations:
+    mongodb-atlas.io/cluster: 5f1c2b3a4d5e6f7a8b9c0d1e/orders-cluster
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/orders-team

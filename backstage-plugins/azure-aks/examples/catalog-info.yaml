@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: orders-api
+  description: Service deployed to AKS.
+  annotations:
+    azure-aks.io/cluster-id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/my-rg/providers/Microsoft.ContainerService/managedClusters/my-aks
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/orders-team
