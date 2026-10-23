@@ -18,15 +18,23 @@ Register a `Component` (or `API`) entity and mark it as GraphQL with the `graphq
 
 Links are rendered only for `http`/`https` URLs. See `examples/orders-graphql/catalog-info.yaml`; add it under `catalog.locations` in `app-config.yaml` or use Catalog Import.
 
-## Install and route
+## Install in a new frontend app
+
+This package provides a frontend module that adds a GraphQL Services page to the Catalog plugin. In the host Backstage app, use `@backstage/frontend-defaults` 0.5.5 and include the Catalog plugin and this module in `createApp`:
 
 ```tsx
-import { GraphqlServicesPage } from "@internal/plugin-graphql-services";
+import { createApp } from "@backstage/frontend-defaults";
+import catalogPlugin from "@backstage/plugin-catalog/alpha";
+import graphqlServicesModule from "@internal/plugin-graphql-services";
 
-<Route path="/graphql-services" element={<GraphqlServicesPage />} />
+const app = createApp({
+  features: [catalogPlugin, graphqlServicesModule],
+});
+
+export default app.createRoot();
 ```
 
-The host app must configure `catalogApiRef`. The page provides search, refresh, loading, empty and error states, and a responsive layout.
+The module uses the Catalog API configured by the Catalog plugin. It provides search, refresh, loading, empty and error states, and a responsive layout. `@backstage/frontend-plugin-api` 0.18.0 is used by this package.
 
 ## Build
 

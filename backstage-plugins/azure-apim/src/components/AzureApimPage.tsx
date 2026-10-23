@@ -1,6 +1,6 @@
 import { Entity } from "@backstage/catalog-model";
 import { catalogApiRef, EntityRefLink } from "@backstage/plugin-catalog-react";
-import { useApi } from "@backstage/core-plugin-api";
+import { useApi } from "@backstage/frontend-plugin-api";
 import React, { ChangeEvent, useEffect, useMemo, useState } from "react";
 import "./AzureApimPage.css";
 

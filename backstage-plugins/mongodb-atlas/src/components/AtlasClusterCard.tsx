@@ -1,5 +1,5 @@
 import { useEntity } from "@backstage/plugin-catalog-react";
-import { useApi } from "@backstage/core-plugin-api";
+import { useApi } from "@backstage/frontend-plugin-api";
 import React, { useEffect, useState } from "react";
 import { AtlasCluster, mongoDbAtlasApiRef } from "../api.js";
 import "./AtlasClusterCard.css";

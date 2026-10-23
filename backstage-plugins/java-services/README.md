@@ -16,14 +16,20 @@ Register a standard Backstage `Component` entity in the Catalog. Mark Java servi
 
 An example entity is available at `examples/java-service/catalog-info.yaml`. Add its location to the Backstage Catalog (for example, under `catalog.locations` in `app-config.yaml`) or use the Catalog Import flow. Once ingested, the plugin reads it from the catalog API and applies the current user's catalog permissions.
 
-## Install and route
+## Install in a new frontend app
 
-From a Backstage app workspace, add this package as a workspace package or install it from the configured package registry, then add the route to the app's router:
+This package provides a frontend module that adds a Java Services page to the Catalog plugin. In the host Backstage app, use `@backstage/frontend-defaults` 0.5.5 and include the Catalog plugin and this module in `createApp`:
 
 ```tsx
-import { JavaServicesPage } from "@internal/plugin-java-services";
+import { createApp } from "@backstage/frontend-defaults";
+import catalogPlugin from "@backstage/plugin-catalog/alpha";
+import javaServicesModule from "@internal/plugin-java-services";
 
-<Route path="/java-services" element={<JavaServicesPage />} />
+const app = createApp({
+  features: [catalogPlugin, javaServicesModule],
+});
+
+export default app.createRoot();
 ```
 
-The host app must already configure Backstage's `catalogApiRef` implementation, as it does for the Catalog plugin. The page provides search, refresh, loading, empty, and error states and adapts the service table for narrow screens.
+The module uses the Catalog API configured by the Catalog plugin. It provides search, refresh, loading, empty, and error states and adapts the service table for narrow screens. `@backstage/frontend-plugin-api` 0.18.0 is used by this package.

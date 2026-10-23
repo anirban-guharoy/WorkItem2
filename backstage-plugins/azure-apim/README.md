@@ -22,15 +22,21 @@ When subscription ID, resource group and service are all present, an **Azure por
 
 See `examples/orders-api/catalog-info.yaml`. Add it under `catalog.locations` in `app-config.yaml` or use Catalog Import.
 
-## Install and route
+## Install in a new frontend app
 
 ```tsx
-import { AzureApimPage } from "@internal/plugin-azure-apim";
+import { createApp } from "@backstage/frontend-defaults";
+import catalogPlugin from "@backstage/plugin-catalog/alpha";
+import azureApimModule from "@internal/plugin-azure-apim";
 
-<Route path="/azure-apim" element={<AzureApimPage />} />
+const app = createApp({
+  features: [catalogPlugin, azureApimModule],
+});
+
+export default app.createRoot();
 ```
 
-The host app must configure `catalogApiRef`, as the Catalog plugin does. The page provides search, refresh, loading, empty and error states, and a responsive layout.
+This package uses `@backstage/frontend-plugin-api` 0.18.0. The module adds the APIM page at `/azure-apim` and uses the Catalog API configured by the Catalog plugin. The page provides search, refresh, loading, empty and error states, and a responsive layout.
 
 ## Build
 

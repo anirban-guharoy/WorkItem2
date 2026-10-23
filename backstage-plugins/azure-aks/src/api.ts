@@ -1,4 +1,4 @@
-import { createApiRef, DiscoveryApi, FetchApi } from "@backstage/core-plugin-api";
+import { createApiRef, DiscoveryApi, FetchApi } from "@backstage/frontend-plugin-api";
 
 export interface AksNodePool {
   name: string;

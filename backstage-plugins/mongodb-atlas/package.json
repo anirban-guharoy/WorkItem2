@@ -15,7 +15,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@backstage/core-plugin-api": "^1.12.10",
+    "@backstage/frontend-plugin-api": "0.18.0",
     "@backstage/plugin-catalog-react": "^3.2.3"
   },
   "peerDependencies": {

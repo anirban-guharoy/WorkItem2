@@ -1,2 +1,2 @@
-export { JavaServicesPage, javaServicesPlugin } from "./plugin.js";
-export { javaServicesRouteRef } from "./routes.js";
+export { javaServicesModule as default, javaServicesModule } from "./module.js";
+export { JavaServicesPage } from "./components/JavaServicesPage.js";
